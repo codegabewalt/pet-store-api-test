@@ -1,0 +1,16 @@
+{
+  "id": 25657585,
+  "category": {
+    "id": 0,
+    "name": "Shadowfax"
+  },
+  "name": "lord of horses",
+  "photoUrls": ["string"],
+  "tags": [
+    {
+      "id": 0,
+      "name": "LOTR"
+    }
+  ],
+  "status": "available"
+}
