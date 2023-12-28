@@ -18,7 +18,7 @@ test("Check new available pet", async ({ request }) => {
   expect(pet.category.name).toBe(json.category.name);
 });
 
-test("Update new availible pet", async ({ request }) => {
+test("Update added availible pet", async ({ request }) => {
   const res = await request.put("pet", {
     data: petUpdated,
   });
@@ -26,9 +26,21 @@ test("Update new availible pet", async ({ request }) => {
   expect(res.status()).toBe(200);
 });
 
-test("Check updated new available pet", async ({ request }) => {
+test("Check updated added available pet", async ({ request }) => {
   const res = await request.get(`pet/${petUpdated.id}`);
   const json = await res.json();
 
   expect(petUpdated.category.name).toBe(json.category.name);
+});
+
+test("Delete added available pet", async ({ request }) => {
+  const res = await request.delete(`pet/${petUpdated.id}`);
+
+  expect(res.status()).toBe(200);
+});
+
+test("Check availiable pet was deleted", async ({ request }) => {
+  const res = await request.get(`pet/${petUpdated.id}`);
+
+  expect(res.status()).toBe(404);
 });
