@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 
-const pet = require("../data/pet.json");
-const petUpdated = require("../data/petUpdated.json");
+const pet = require("../data/pet/pet.json");
+const petUpdated = require("../data/pet/petUpdated.json");
 
-test.beforeAll("Add new available pet", async ({ request }) => {
+test("Add new available pet", async ({ request }) => {
   const res = await request.post("pet", {
     data: pet,
   });
